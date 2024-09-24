@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=<OPEN_WEATHER_API_KEY>&q=Seattle
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Tue, 24 Sep 2024 22:10:54 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '506'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?q=seattle"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-122.3321,"lat":47.6062},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"base":"stations","main":{"temp":297.65,"feels_like":297.83,"temp_min":295.9,"temp_max":300.31,"pressure":1006,"humidity":64,"sea_level":1006,"grnd_level":997},"visibility":10000,"wind":{"speed":2.06,"deg":0},"clouds":{"all":0},"dt":1727215681,"sys":{"type":2,"id":2041694,"country":"US","sunrise":1727186372,"sunset":1727229762},"timezone":-25200,"id":5809844,"name":"Seattle","cod":200}'
+  recorded_at: Tue, 24 Sep 2024 22:10:54 GMT
+recorded_with: VCR 6.3.1

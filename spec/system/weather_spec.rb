@@ -6,7 +6,9 @@ RSpec.describe "Weather", type: :system do
   end
 
   it "shows the weather" do
-    visit "/"
-    expect(page).to have_text("Weather")
+    VCR.use_cassette("open_weather_service/get_weather") do
+      visit "/"
+      expect(page).to have_text("Weather")
+    end
   end
 end

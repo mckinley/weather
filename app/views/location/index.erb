@@ -1,7 +1,7 @@
 <h1 class="text-2xl font-semibold leading-6 text-gray-900">Weather</h1>
 
 <% if @location.current_weather %>
-  <h2>Current weather for <%= @location.zip %></h2>
+  <h2>Current weather for <%= @location.name %></h2>
   <p>Summary: <%= @location.current_weather.summary %></p>
   <p>Description: <%= @location.current_weather.description %></p>
   <ul>

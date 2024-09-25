@@ -1,5 +1,5 @@
 namespace :test do
-  desc "Run tests/commands that are run on CI .github/workflows/ci.yml"
+  desc "Run tests/commands that are run on CI .github/workflows/ci.yml. Run `rubocop -A` to auto-correct Rubocop offenses."
 
   task :ci do
     sh "bin/brakeman --no-pager"

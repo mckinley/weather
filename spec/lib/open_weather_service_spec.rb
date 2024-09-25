@@ -14,15 +14,15 @@ RSpec.describe OpenWeatherService do
 
         weather = results.current_weather
         expect(weather).to be_a(WeatherDetail)
-        expect(weather.temp).to eq 293.47
-        expect(weather.feels_like).to eq 293.54
-        expect(weather.temp_min).to eq 292.05
-        expect(weather.temp_max).to eq 296.27
+        expect(weather.temp).to eq 292.08
+        expect(weather.feels_like).to eq 292.12
+        expect(weather.temp_min).to eq 290.61
+        expect(weather.temp_max).to eq 293.87
         expect(weather.pressure).to eq 1005
-        expect(weather.humidity).to eq 76
-        expect(weather.wind_speed).to eq 1.34
-        expect(weather.summary).to eq "Clouds"
-        expect(weather.description).to eq "few clouds"
+        expect(weather.humidity).to eq 80
+        expect(weather.wind_speed).to eq 0.89
+        expect(weather.summary).to eq "Clear"
+        expect(weather.description).to eq "clear sky"
       end
     end
   end

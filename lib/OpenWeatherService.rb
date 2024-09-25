@@ -2,11 +2,11 @@ require "faraday"
 
 class OpenWeatherService
   def initialize
-    @conn = Faraday.new(url: "https://api.openweathermap.org")
+    @conn = Faraday.new(url: "https://api.openweathermap.org", params: { appid: ENV["OPEN_WEATHER_API_KEY"] })
   end
 
   def get_location_weather_for_zip(zip)
-    # Rails.cache.exist? would introduce race condition.
+    # Rails.cache.exist? would introduce a race condition.
     from_cache = true
     location = Rails.cache.fetch("OpenWeatherService#get_location_weather_for_zip:#{zip}", expires_in: 30.minutes) do
       from_cache = false
@@ -22,12 +22,12 @@ class OpenWeatherService
   private
 
   def get_weather_for_coordinates(lat, lon)
-    response = @conn.get("data/2.5/weather?lat=#{lat}&lon=#{lon}&appid=#{ENV['OPEN_WEATHER_API_KEY']}")
+    response = @conn.get("data/2.5/weather?lat=#{lat}&lon=#{lon}")
     weather_from_json(response)
   end
 
   def get_location_for_zip(zip)
-    response = @conn.get("geo/1.0/zip?zip=#{zip}&appid=#{ENV['OPEN_WEATHER_API_KEY']}")
+    response = @conn.get("geo/1.0/zip?zip=#{zip}")
     location_from_json(response)
   end
 

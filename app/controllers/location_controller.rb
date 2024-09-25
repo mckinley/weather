@@ -1,9 +1,9 @@
 class LocationController < ApplicationController
-  rescue_from ApiError, with: :api_error
+  rescue_from Services::ApiError, with: :api_error
   def index
     # As a quick solution for validating the zip, we are instantiating a Location object.
     if location.valid?
-      @location = OpenWeatherService.new.get_location_weather_for_zip(location.zip)
+      @location = Services::OpenWeatherService.new.get_location_weather_for_zip(location.zip)
     end
   end
 

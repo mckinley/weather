@@ -1,0 +1,522 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.weather.gov/points/39.7456,-97.0892
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - "(<NOAA_API_CONTACT_WEBSITE>, admin@<NOAA_API_CONTACT_WEBSITE>)"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.20.1
+      Content-Type:
+      - application/geo+json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Correlation-Id, X-Request-Id, X-Server-Id
+      X-Request-Id:
+      - 91251e22-8efb-44c5-b27a-79aa3210dedb
+      X-Correlation-Id:
+      - 8f8320e7
+      X-Server-Id:
+      - vm-lnx-nids-apiapp16.ncep.noaa.gov
+      Vary:
+      - Accept,Feature-Flags,Accept-Language
+      - Accept-Encoding
+      Cache-Control:
+      - public, max-age=78302, s-maxage=120
+      Expires:
+      - Thu, 26 Sep 2024 18:32:37 GMT
+      Date:
+      - Wed, 25 Sep 2024 20:47:35 GMT
+      Content-Length:
+      - '3096'
+      Connection:
+      - keep-alive
+      X-Edge-Request-Id:
+      - 1309b013
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains ; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "@context": [
+                "https://geojson.org/geojson-ld/geojson-context.jsonld",
+                {
+                    "@version": "1.1",
+                    "wx": "https://api.weather.gov/ontology#",
+                    "s": "https://schema.org/",
+                    "geo": "http://www.opengis.net/ont/geosparql#",
+                    "unit": "http://codes.wmo.int/common/unit/",
+                    "@vocab": "https://api.weather.gov/ontology#",
+                    "geometry": {
+                        "@id": "s:GeoCoordinates",
+                        "@type": "geo:wktLiteral"
+                    },
+                    "city": "s:addressLocality",
+                    "state": "s:addressRegion",
+                    "distance": {
+                        "@id": "s:Distance",
+                        "@type": "s:QuantitativeValue"
+                    },
+                    "bearing": {
+                        "@type": "s:QuantitativeValue"
+                    },
+                    "value": {
+                        "@id": "s:value"
+                    },
+                    "unitCode": {
+                        "@id": "s:unitCode",
+                        "@type": "@id"
+                    },
+                    "forecastOffice": {
+                        "@type": "@id"
+                    },
+                    "forecastGridData": {
+                        "@type": "@id"
+                    },
+                    "publicZone": {
+                        "@type": "@id"
+                    },
+                    "county": {
+                        "@type": "@id"
+                    }
+                }
+            ],
+            "id": "https://api.weather.gov/points/39.7456,-97.0892",
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -97.089200000000005,
+                    39.745600000000003
+                ]
+            },
+            "properties": {
+                "@id": "https://api.weather.gov/points/39.7456,-97.0892",
+                "@type": "wx:Point",
+                "cwa": "TOP",
+                "forecastOffice": "https://api.weather.gov/offices/TOP",
+                "gridId": "TOP",
+                "gridX": 32,
+                "gridY": 81,
+                "forecast": "https://api.weather.gov/gridpoints/TOP/32,81/forecast",
+                "forecastHourly": "https://api.weather.gov/gridpoints/TOP/32,81/forecast/hourly",
+                "forecastGridData": "https://api.weather.gov/gridpoints/TOP/32,81",
+                "observationStations": "https://api.weather.gov/gridpoints/TOP/32,81/stations",
+                "relativeLocation": {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -97.086661000000007,
+                            39.679375999999998
+                        ]
+                    },
+                    "properties": {
+                        "city": "Linn",
+                        "state": "KS",
+                        "distance": {
+                            "unitCode": "wmoUnit:m",
+                            "value": 7366.9851976443997
+                        },
+                        "bearing": {
+                            "unitCode": "wmoUnit:degree_(angle)",
+                            "value": 358
+                        }
+                    }
+                },
+                "forecastZone": "https://api.weather.gov/zones/forecast/KSZ009",
+                "county": "https://api.weather.gov/zones/county/KSC201",
+                "fireWeatherZone": "https://api.weather.gov/zones/fire/KSZ009",
+                "timeZone": "America/Chicago",
+                "radarStation": "KTWX"
+            }
+        }
+  recorded_at: Wed, 25 Sep 2024 20:47:35 GMT
+- request:
+    method: get
+    uri: https://api.weather.gov/gridpoints/TOP/32,81/forecast
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - "(<NOAA_API_CONTACT_WEBSITE>, admin@<NOAA_API_CONTACT_WEBSITE>)"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.20.1
+      Content-Type:
+      - application/geo+json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Correlation-Id, X-Request-Id, X-Server-Id
+      X-Request-Id:
+      - 3abb256e-552f-40c7-984e-ee571f29a178
+      X-Correlation-Id:
+      - f9ad63a
+      X-Server-Id:
+      - vm-lnx-nids-apiapp3.ncep.noaa.gov
+      Vary:
+      - Accept,Feature-Flags,Accept-Language
+      - Accept-Encoding
+      Cache-Control:
+      - public, max-age=3365, s-maxage=3600
+      Expires:
+      - Wed, 25 Sep 2024 21:43:40 GMT
+      Date:
+      - Wed, 25 Sep 2024 20:47:35 GMT
+      Content-Length:
+      - '12748'
+      Connection:
+      - keep-alive
+      X-Edge-Request-Id:
+      - 1309b21d
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains ; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "@context": [
+                "https://geojson.org/geojson-ld/geojson-context.jsonld",
+                {
+                    "@version": "1.1",
+                    "wx": "https://api.weather.gov/ontology#",
+                    "geo": "http://www.opengis.net/ont/geosparql#",
+                    "unit": "http://codes.wmo.int/common/unit/",
+                    "@vocab": "https://api.weather.gov/ontology#"
+                }
+            ],
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -97.1089731,
+                            39.766826299999998
+                        ],
+                        [
+                            -97.108526900000001,
+                            39.744778799999999
+                        ],
+                        [
+                            -97.079846700000004,
+                            39.745119500000001
+                        ],
+                        [
+                            -97.08028680000001,
+                            39.767167000000001
+                        ],
+                        [
+                            -97.1089731,
+                            39.766826299999998
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "units": "us",
+                "forecastGenerator": "BaselineForecastGenerator",
+                "generatedAt": "2024-09-25T20:43:47+00:00",
+                "updateTime": "2024-09-25T19:11:10+00:00",
+                "validTimes": "2024-09-25T13:00:00+00:00/P7DT12H",
+                "elevation": {
+                    "unitCode": "wmoUnit:m",
+                    "value": 441.95999999999998
+                },
+                "periods": [
+                    {
+                        "number": 1,
+                        "name": "This Afternoon",
+                        "startTime": "2024-09-25T15:00:00-05:00",
+                        "endTime": "2024-09-25T18:00:00-05:00",
+                        "isDaytime": true,
+                        "temperature": 80,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "5 mph",
+                        "windDirection": "NE",
+                        "icon": "https://api.weather.gov/icons/land/day/skc?size=medium",
+                        "shortForecast": "Sunny",
+                        "detailedForecast": "Sunny, with a high near 80. Northeast wind around 5 mph."
+                    },
+                    {
+                        "number": 2,
+                        "name": "Tonight",
+                        "startTime": "2024-09-25T18:00:00-05:00",
+                        "endTime": "2024-09-26T06:00:00-05:00",
+                        "isDaytime": false,
+                        "temperature": 51,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "0 mph",
+                        "windDirection": "",
+                        "icon": "https://api.weather.gov/icons/land/night/skc?size=medium",
+                        "shortForecast": "Clear",
+                        "detailedForecast": "Clear, with a low around 51. Southeast wind around 0 mph."
+                    },
+                    {
+                        "number": 3,
+                        "name": "Thursday",
+                        "startTime": "2024-09-26T06:00:00-05:00",
+                        "endTime": "2024-09-26T18:00:00-05:00",
+                        "isDaytime": true,
+                        "temperature": 80,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "0 to 5 mph",
+                        "windDirection": "S",
+                        "icon": "https://api.weather.gov/icons/land/day/skc?size=medium",
+                        "shortForecast": "Sunny",
+                        "detailedForecast": "Sunny, with a high near 80. South wind 0 to 5 mph."
+                    },
+                    {
+                        "number": 4,
+                        "name": "Thursday Night",
+                        "startTime": "2024-09-26T18:00:00-05:00",
+                        "endTime": "2024-09-27T06:00:00-05:00",
+                        "isDaytime": false,
+                        "temperature": 52,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "0 to 5 mph",
+                        "windDirection": "SE",
+                        "icon": "https://api.weather.gov/icons/land/night/skc?size=medium",
+                        "shortForecast": "Clear",
+                        "detailedForecast": "Clear, with a low around 52. Southeast wind 0 to 5 mph."
+                    },
+                    {
+                        "number": 5,
+                        "name": "Friday",
+                        "startTime": "2024-09-27T06:00:00-05:00",
+                        "endTime": "2024-09-27T18:00:00-05:00",
+                        "isDaytime": true,
+                        "temperature": 81,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "0 to 5 mph",
+                        "windDirection": "N",
+                        "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
+                        "shortForecast": "Sunny",
+                        "detailedForecast": "Sunny, with a high near 81. North wind 0 to 5 mph."
+                    },
+                    {
+                        "number": 6,
+                        "name": "Friday Night",
+                        "startTime": "2024-09-27T18:00:00-05:00",
+                        "endTime": "2024-09-28T06:00:00-05:00",
+                        "isDaytime": false,
+                        "temperature": 54,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "0 to 5 mph",
+                        "windDirection": "N",
+                        "icon": "https://api.weather.gov/icons/land/night/few?size=medium",
+                        "shortForecast": "Mostly Clear",
+                        "detailedForecast": "Mostly clear, with a low around 54. North wind 0 to 5 mph."
+                    },
+                    {
+                        "number": 7,
+                        "name": "Saturday",
+                        "startTime": "2024-09-28T06:00:00-05:00",
+                        "endTime": "2024-09-28T18:00:00-05:00",
+                        "isDaytime": true,
+                        "temperature": 82,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "5 to 10 mph",
+                        "windDirection": "N",
+                        "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
+                        "shortForecast": "Sunny",
+                        "detailedForecast": "Sunny, with a high near 82. North wind 5 to 10 mph."
+                    },
+                    {
+                        "number": 8,
+                        "name": "Saturday Night",
+                        "startTime": "2024-09-28T18:00:00-05:00",
+                        "endTime": "2024-09-29T06:00:00-05:00",
+                        "isDaytime": false,
+                        "temperature": 53,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "0 to 5 mph",
+                        "windDirection": "NE",
+                        "icon": "https://api.weather.gov/icons/land/night/few?size=medium",
+                        "shortForecast": "Mostly Clear",
+                        "detailedForecast": "Mostly clear, with a low around 53. Northeast wind 0 to 5 mph."
+                    },
+                    {
+                        "number": 9,
+                        "name": "Sunday",
+                        "startTime": "2024-09-29T06:00:00-05:00",
+                        "endTime": "2024-09-29T18:00:00-05:00",
+                        "isDaytime": true,
+                        "temperature": 82,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "5 mph",
+                        "windDirection": "NE",
+                        "icon": "https://api.weather.gov/icons/land/day/skc?size=medium",
+                        "shortForecast": "Sunny",
+                        "detailedForecast": "Sunny, with a high near 82. Northeast wind around 5 mph."
+                    },
+                    {
+                        "number": 10,
+                        "name": "Sunday Night",
+                        "startTime": "2024-09-29T18:00:00-05:00",
+                        "endTime": "2024-09-30T06:00:00-05:00",
+                        "isDaytime": false,
+                        "temperature": 54,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "0 to 5 mph",
+                        "windDirection": "SE",
+                        "icon": "https://api.weather.gov/icons/land/night/skc?size=medium",
+                        "shortForecast": "Clear",
+                        "detailedForecast": "Clear, with a low around 54."
+                    },
+                    {
+                        "number": 11,
+                        "name": "Monday",
+                        "startTime": "2024-09-30T06:00:00-05:00",
+                        "endTime": "2024-09-30T18:00:00-05:00",
+                        "isDaytime": true,
+                        "temperature": 82,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "5 to 10 mph",
+                        "windDirection": "W",
+                        "icon": "https://api.weather.gov/icons/land/day/skc?size=medium",
+                        "shortForecast": "Sunny",
+                        "detailedForecast": "Sunny, with a high near 82."
+                    },
+                    {
+                        "number": 12,
+                        "name": "Monday Night",
+                        "startTime": "2024-09-30T18:00:00-05:00",
+                        "endTime": "2024-10-01T06:00:00-05:00",
+                        "isDaytime": false,
+                        "temperature": 48,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "5 to 10 mph",
+                        "windDirection": "N",
+                        "icon": "https://api.weather.gov/icons/land/night/skc?size=medium",
+                        "shortForecast": "Clear",
+                        "detailedForecast": "Clear, with a low around 48."
+                    },
+                    {
+                        "number": 13,
+                        "name": "Tuesday",
+                        "startTime": "2024-10-01T06:00:00-05:00",
+                        "endTime": "2024-10-01T18:00:00-05:00",
+                        "isDaytime": true,
+                        "temperature": 69,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "5 to 10 mph",
+                        "windDirection": "N",
+                        "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
+                        "shortForecast": "Sunny",
+                        "detailedForecast": "Sunny, with a high near 69."
+                    },
+                    {
+                        "number": 14,
+                        "name": "Tuesday Night",
+                        "startTime": "2024-10-01T18:00:00-05:00",
+                        "endTime": "2024-10-02T06:00:00-05:00",
+                        "isDaytime": false,
+                        "temperature": 45,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "5 mph",
+                        "windDirection": "SE",
+                        "icon": "https://api.weather.gov/icons/land/night/few?size=medium",
+                        "shortForecast": "Mostly Clear",
+                        "detailedForecast": "Mostly clear, with a low around 45."
+                    }
+                ]
+            }
+        }
+  recorded_at: Wed, 25 Sep 2024 20:47:35 GMT
+recorded_with: VCR 6.3.1

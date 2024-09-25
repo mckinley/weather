@@ -1,10 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe OpenWeatherService do
+RSpec.describe Services::OpenWeatherService do
   describe "#get_location_weather_for_zip" do
+    let(:valid_zip) { "98103" }
+
     it "returns a location and associated weather object that describes the current weather" do
       VCR.use_cassette("open_weather_service/get_location_weather_for_zip") do
-        results = OpenWeatherService.new.get_location_weather_for_zip("98103")
+        results = Services::OpenWeatherService.new.get_location_weather_for_zip(valid_zip)
         expect(results).to be_a(Location)
         expect(results.zip).to eq "98103"
         expect(results.lat).to eq 47.6733
@@ -29,7 +31,7 @@ RSpec.describe OpenWeatherService do
     context "when zip is not found" do
       it "returns nil" do
         VCR.use_cassette("open_weather_service/get_location_weather_for_zip") do
-          expect { OpenWeatherService.new.get_location_weather_for_zip("00000") }.to raise_error(ApiError)
+          expect { Services::OpenWeatherService.new.get_location_weather_for_zip("00000") }.to raise_error(Services::ApiError)
         end
       end
     end

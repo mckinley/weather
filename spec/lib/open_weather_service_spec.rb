@@ -25,5 +25,13 @@ RSpec.describe OpenWeatherService do
         expect(weather.description).to eq "clear sky"
       end
     end
+
+    context "when zip is not found" do
+      it "returns nil" do
+        VCR.use_cassette("open_weather_service/get_location_weather_for_zip") do
+          expect { OpenWeatherService.new.get_location_weather_for_zip("00000") }.to raise_error(ApiError)
+        end
+      end
+    end
   end
 end

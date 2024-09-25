@@ -27,7 +27,7 @@
   </div>
 <% end %>
 
-<%= form_with model: @location, url: weather_path, method: :get, local: true do %>
+<%= form_with model: @location, url: location_path, method: :get, local: true do %>
   <div>
     <%= label_tag :zip, "Zip code:" %>
     <%= text_field_tag :zip, params[:zip] %>

@@ -6,7 +6,7 @@ class OpenWeatherService
   end
 
   def get_location_weather_for_zip(zip)
-    # Rails.cache.exist? would introduce a race condition.
+    # Rails.cache.exist? would introduce a race condition, so we are using the from_cache var.
     from_cache = true
     location = Rails.cache.fetch("OpenWeatherService#get_location_weather_for_zip:#{zip}", expires_in: 30.minutes) do
       from_cache = false
@@ -58,6 +58,9 @@ class OpenWeatherService
   end
 
   def parse_json(response)
+    if response.status != 200
+      raise ApiError.new(response.status, response.body)
+    end
     JSON.parse(response.body, symbolize_names: true)
   end
 end

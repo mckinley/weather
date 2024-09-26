@@ -99,3 +99,5 @@ There were many assumptions made durring the development of this application. Id
 To view all changes made after the initial generation of the Rails app (`rails new`), this github comparison can be used:
 
 https://github.com/mckinley/weather/compare/8da1c07...main
+
+Clicking on "Files changed" will reveal all changes made to the application since it was generated.

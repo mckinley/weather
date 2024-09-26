@@ -1,3 +1,5 @@
+# [Weather and Forecast](https://elaborate-florina-mckinley-aviation-f369229d.koyeb.app/)
+
 # Introduction
 This is a simple application that shows the current weather and forecast for a given address.
 Data is fetched from the OpenWeatherMap API and the NOAA API.
@@ -7,6 +9,7 @@ Data is fetched from the OpenWeatherMap API and the NOAA API.
 1. [Clone this repository and navigate to the project directory](#clone-this-repository-and-navigate-to-the-project-directory)
 1. [Set up environment variables](#set-up-environment-variables)
 1. [Install dependencies](#install-dependencies)
+1. [Create databases](#create-databases)
 1. [Run the development server](#run-the-development-server)
 
 ### Generate API key with OpenWeatherMap
@@ -37,6 +40,12 @@ There are other environment variables that can be set but they are optional.
 bundle i
 ```
 
+### Create databases
+Although the application does not currently use a database, some features are pending that will require one.
+```
+rails db:setup
+```
+
 ### Run the development server
 ```
 rails s
@@ -59,7 +68,7 @@ rails spec:system
 ```
 
 Tests and other tools like rubocop are run on CI with each commit.
-There is a custom rake task provided to run all checks:
+There is a custom rake task provided to run all checks that are run on CI:
 ```
 rails test:ci
 ```

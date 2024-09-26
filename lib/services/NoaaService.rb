@@ -6,8 +6,7 @@ module Services
     NOAA_API_CONTACT_EMAIL = ENV.fetch("NOAA_API_CONTACT_EMAIL", "admin@noaaapicontactwebsite.com").freeze
 
     def initialize
-      @conn = Faraday.new(url: "https://api.weather.gov",
-                          headers: { user_agent: "(#{NOAA_API_CONTACT_WEBSITE}, #{NOAA_API_CONTACT_EMAIL})" })
+      @conn = Faraday.new(url: "https://api.weather.gov", headers: { user_agent: "(#{NOAA_API_CONTACT_WEBSITE}, #{NOAA_API_CONTACT_EMAIL})" })
     end
 
     def get_forecast_for_coordinates(lat, lon)

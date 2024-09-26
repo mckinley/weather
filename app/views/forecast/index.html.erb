@@ -1,9 +1,24 @@
 <h1 class="text-2xl font-semibold leading-6 text-gray-900">Forecast</h1>
 
-<% if @forecast %>
-<pre>
-<%= JSON.pretty_generate(@forecast.weather_data.map(&:description)) %>
-</pre>
-<% end %>
-
 <%= render "application/address_form" %>
+
+<% if @forecast %>
+  <h2>Forecast for: <%= @forecast.location.name %></h2>
+  <p>From cache: <%= @forecast.from_cache %></p>
+  <% @forecast.weather_data.each do |weather_data| %>
+    <div>
+      <h3>Weather for: <%= weather_data.name %></h3>
+      <p>Summary: <%= weather_data.summary %></p>
+      <p>Description: <%= weather_data.description %></p>
+      <ul>
+        <li>Temperature: <%= weather_data.temp %></li>
+        <li>Feels like: <%= weather_data.feels_like %></li>
+        <li>High: <%= weather_data.temp_max %></li>
+        <li>Low: <%= weather_data.temp_min %></li>
+        <li>Pressure: <%= weather_data.pressure %></li>
+        <li>Humidity: <%= weather_data.humidity %></li>
+        <li>Wind speed: <%= weather_data.wind_speed %></li>
+      </ul>
+    </div>
+  <% end %>
+<% end %>

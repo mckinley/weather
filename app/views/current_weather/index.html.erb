@@ -1,7 +1,9 @@
 <h1 class="text-2xl font-semibold leading-6 text-gray-900">Current Weather</h1>
 
+<%= render "application/address_form" %>
+
 <% if @current_weather %>
-  <h2>Current weather for <%= @current_weather.location.name %></h2>
+  <h2>Current weather for: <%= @current_weather.location.name %></h2>
   <p>Summary: <%= @current_weather.summary %></p>
   <p>Description: <%= @current_weather.description %></p>
   <ul>
@@ -15,5 +17,3 @@
     <li>From cache: <%= @current_weather.from_cache %></li>
   </ul>
 <% end %>
-
-<%= render "application/address_form" %>

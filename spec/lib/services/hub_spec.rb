@@ -22,6 +22,29 @@ RSpec.describe Services::Hub, vcr: { cassette_name: "hub" } do
       current_weather = Services::Hub.new.get_current_weather_for_zip(valid_zip)
       validate_location(current_weather.location)
     end
+
+    context "when cache is enabled" do
+      let(:memory_store) { ActiveSupport::Cache.lookup_store(:memory_store) }
+
+      before do
+        allow(Rails).to receive(:cache).and_return(memory_store)
+        Rails.cache.clear
+      end
+
+      after do
+        Rails.cache.clear
+      end
+
+      it "returns from cache" do
+        expect(Rails.cache.exist?("current_weather_for_zip:#{valid_zip}")).to eq false
+        result = Services::Hub.new.get_current_weather_for_zip(valid_zip)
+        expect(result.from_cache).to eq false
+
+        expect(Rails.cache.exist?("current_weather_for_zip:#{valid_zip}")).to eq true
+        result = Services::Hub.new.get_current_weather_for_zip(valid_zip)
+        expect(result.from_cache).to eq true
+      end
+    end
   end
 
   describe "#get_forcast_for_zip" do
@@ -42,6 +65,29 @@ RSpec.describe Services::Hub, vcr: { cassette_name: "hub" } do
     it "returns location for a zip" do
       forecast = Services::Hub.new.get_forecast_for_zip(valid_zip)
       validate_location(forecast.location)
+    end
+
+    context "when cache is enabled" do
+      let(:memory_store) { ActiveSupport::Cache.lookup_store(:memory_store) }
+
+      before do
+        allow(Rails).to receive(:cache).and_return(memory_store)
+        Rails.cache.clear
+      end
+
+      after do
+        Rails.cache.clear
+      end
+
+      it "returns from cache" do
+        expect(Rails.cache.exist?("forecast_for_zip:#{valid_zip}")).to eq false
+        result = Services::Hub.new.get_forecast_for_zip(valid_zip)
+        expect(result.from_cache).to eq false
+
+        expect(Rails.cache.exist?("forecast_for_zip:#{valid_zip}")).to eq true
+        result = Services::Hub.new.get_forecast_for_zip(valid_zip)
+        expect(result.from_cache).to eq true
+      end
     end
   end
 

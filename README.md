@@ -60,6 +60,8 @@ rails test:ci
 
 ## Deployment
 
+The app is deployed here: https://elaborate-florina-mckinley-aviation-f369229d.koyeb.app/
+
 ## Architecture Considerations
 ### RSpec for testing
 Behavior driven development is used to ensure that the application behaves as expected.
@@ -73,5 +75,24 @@ Remember to filter sensitive data from the VCR cassettes before committing them 
 ### Services
 Use the Services::Hub class for all service requirements. It handles caching and is aware of the various APIs that can be used to fetch data.
 
-## Happy coding!
+## UI
+
+The UI is extremely minimal.
+
+## APIs
+
+https://openweathermap.org/api
+https://www.weather.gov/documentation/services-web-api
+
+## URLs
+
+It is strongly preferable that URLs are resource based. However, the weather and forecast URLs don't fit nicely in a resource oriented paradigm.
+
+## Caching
+
+Caching is critical to the performance of the application. The application currently uses memory caching, but this should be replaced with a more robust caching solution like Redis.
+
+## Product
+
+There were many assumptions made durring the development of this application. Ideally there would be opportunity to have several conversations with Product to clarify requirements.
 

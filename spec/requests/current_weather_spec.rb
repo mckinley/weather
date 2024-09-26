@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Current Weather", type: :request, vcr: { cassette_name: "open_weather_service/get_current_weather_for_zip" } do
+RSpec.describe "Current Weather", type: :request, vcr: { cassette_name: "hub" } do
   it_behaves_like "address requests"
 
   describe "GET /" do

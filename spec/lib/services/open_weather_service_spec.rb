@@ -1,20 +1,29 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Services::OpenWeatherService, vcr: { cassette_name: "open_weather_service/get_current_weather_for_zip" } do
-  describe "#get_current_weather_for_zip" do
+RSpec.describe Services::OpenWeatherService, vcr: { cassette_name: "hub" } do
+  describe "#get_location_for_zip" do
     let(:valid_zip) { "98103" }
 
-    it "returns a current_weather and associated weather object that describes the current weather" do
-      current_weather = Services::OpenWeatherService.new.get_current_weather_for_zip(valid_zip)
-      location = current_weather.location
-
+    it "returns the location for a zip" do
+      location = Services::OpenWeatherService.new.get_location_for_zip(valid_zip)
       expect(location).to be_a(Location)
       expect(location.zip).to eq "98103"
       expect(location.lat).to eq 47.6733
       expect(location.lon).to eq -122.3426
       expect(location.name).to eq "Seattle"
       expect(location.country).to eq "US"
+    end
 
+    context "when zip is not found" do
+      it "raises an error" do
+        expect { Services::OpenWeatherService.new.get_location_for_zip("00000") }.to raise_error(Services::ApiError)
+      end
+    end
+  end
+
+  describe "#get_current_weather_for_zip" do
+    it "returns the current_weather for coordinates" do
+      current_weather = Services::OpenWeatherService.new.get_current_weather_for_coordinates(47.6733, -122.3426)
       expect(current_weather).to be_a(WeatherData)
       expect(current_weather.temp).to eq 292.08
       expect(current_weather.feels_like).to eq 292.12
@@ -27,9 +36,9 @@ RSpec.describe Services::OpenWeatherService, vcr: { cassette_name: "open_weather
       expect(current_weather.description).to eq "clear sky"
     end
 
-    context "when zip is not found" do
-      it "returns nil" do
-        expect { Services::OpenWeatherService.new.get_current_weather_for_zip("00000") }.to raise_error(Services::ApiError)
+    context "when coordinates are not valid" do
+      it "raises an error" do
+        expect { Services::OpenWeatherService.new.get_current_weather_for_coordinates("invalid", "invalid") }.to raise_error(Services::ApiError)
       end
     end
   end

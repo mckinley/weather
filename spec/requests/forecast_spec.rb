@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Forecasts", type: :request, vcr: { cassette_name: "noaa_service/get_forecast_for_coordinates" } do
+RSpec.describe "Forecasts", type: :request, vcr: { cassette_name: "hub" } do
   it_behaves_like "address requests"
 
   describe "GET /" do

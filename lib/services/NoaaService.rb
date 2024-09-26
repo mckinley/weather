@@ -9,17 +9,14 @@ module Services
       @conn = Faraday.new(url: "https://api.weather.gov", headers: { user_agent: "(#{NOAA_API_CONTACT_WEBSITE}, #{NOAA_API_CONTACT_EMAIL})" })
     end
 
-    def get_forecast_for_coordinates(lat, lon)
-      from_cache = true
-      forecast = Rails.cache.fetch("NoaaService#get_forecast_for_coordinates:#{lat},#{lon}", expires_in: 30.minutes) do
-        from_cache = false
-        response = @conn.get("points/#{lat},#{lon}")
-        url = forecast_url_from_json(response)
-        response = @conn.get(url)
-        forecast_from_json(response)
-      end
-      forecast.from_cache = from_cache
-      forecast
+    def get_forecast_url_for_coordinates(lat, lon)
+      response = @conn.get("points/#{lat},#{lon}")
+      forecast_url_from_json(response)
+    end
+
+    def get_forecast_for_url(url)
+      response = @conn.get(url)
+      forecast_from_json(response)
     end
 
     private

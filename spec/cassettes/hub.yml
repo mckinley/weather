@@ -1,0 +1,723 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openweathermap.org/geo/1.0/zip?appid=<OPEN_WEATHER_API_KEY>&zip=98103
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Wed, 25 Sep 2024 03:17:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '77'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/geo/1.0/zip?zip=98103"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"zip":"98103","name":"Seattle","lat":47.6733,"lon":-122.3426,"country":"US"}'
+  recorded_at: Wed, 25 Sep 2024 03:17:58 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=<OPEN_WEATHER_API_KEY>&lat=47.6733&lon=-122.3426
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Wed, 25 Sep 2024 03:17:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '521'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=47.67&lon=-122.34"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-122.3426,"lat":47.6733},"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01n"}],"base":"stations","main":{"temp":292.08,"feels_like":292.12,"temp_min":290.61,"temp_max":293.87,"pressure":1005,"humidity":80,"sea_level":1005,"grnd_level":996},"visibility":10000,"wind":{"speed":0.89,"deg":313,"gust":1.34},"clouds":{"all":0},"dt":1727234236,"sys":{"type":2,"id":2084372,"country":"US","sunrise":1727186375,"sunset":1727229765},"timezone":-25200,"id":5809844,"name":"Seattle","cod":200}'
+  recorded_at: Wed, 25 Sep 2024 03:17:58 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/geo/1.0/zip?appid=<OPEN_WEATHER_API_KEY>&zip=00000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Wed, 25 Sep 2024 03:33:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '35'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/geo/1.0/zip?zip=00000"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"cod":"404","message":"not found"}'
+  recorded_at: Wed, 25 Sep 2024 03:33:47 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=<OPEN_WEATHER_API_KEY>&lat=&lon=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Wed, 25 Sep 2024 03:33:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '44'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=&lon="
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"cod":"400","message":"Nothing to geocode"}'
+  recorded_at: Wed, 25 Sep 2024 03:33:47 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=<OPEN_WEATHER_API_KEY>&lat=invalid&lon=invalid
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Thu, 26 Sep 2024 03:44:07 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '40'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=&lon="
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"cod":"400","message":"wrong latitude"}'
+  recorded_at: Thu, 26 Sep 2024 03:44:07 GMT
+- request:
+    method: get
+    uri: https://api.weather.gov/points/47.6733,-122.3426
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - "(<NOAA_API_CONTACT_WEBSITE>, admin@<NOAA_API_CONTACT_WEBSITE>)"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.20.1
+      Content-Type:
+      - application/geo+json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Correlation-Id, X-Request-Id, X-Server-Id
+      X-Request-Id:
+      - 322c3cfb-da31-4772-9d35-7f1118a51992
+      X-Correlation-Id:
+      - 8587bda9
+      X-Server-Id:
+      - vm-lnx-nids-apiapp10.ncep.noaa.gov
+      Vary:
+      - Accept,Feature-Flags,Accept-Language
+      - Accept-Encoding
+      Cache-Control:
+      - public, max-age=26129, s-maxage=120
+      Expires:
+      - Thu, 26 Sep 2024 11:26:36 GMT
+      Date:
+      - Thu, 26 Sep 2024 04:11:07 GMT
+      Content-Length:
+      - '3087'
+      Connection:
+      - keep-alive
+      X-Edge-Request-Id:
+      - 45ffa4b0
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains ; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "@context": [
+                "https://geojson.org/geojson-ld/geojson-context.jsonld",
+                {
+                    "@version": "1.1",
+                    "wx": "https://api.weather.gov/ontology#",
+                    "s": "https://schema.org/",
+                    "geo": "http://www.opengis.net/ont/geosparql#",
+                    "unit": "http://codes.wmo.int/common/unit/",
+                    "@vocab": "https://api.weather.gov/ontology#",
+                    "geometry": {
+                        "@id": "s:GeoCoordinates",
+                        "@type": "geo:wktLiteral"
+                    },
+                    "city": "s:addressLocality",
+                    "state": "s:addressRegion",
+                    "distance": {
+                        "@id": "s:Distance",
+                        "@type": "s:QuantitativeValue"
+                    },
+                    "bearing": {
+                        "@type": "s:QuantitativeValue"
+                    },
+                    "value": {
+                        "@id": "s:value"
+                    },
+                    "unitCode": {
+                        "@id": "s:unitCode",
+                        "@type": "@id"
+                    },
+                    "forecastOffice": {
+                        "@type": "@id"
+                    },
+                    "forecastGridData": {
+                        "@type": "@id"
+                    },
+                    "publicZone": {
+                        "@type": "@id"
+                    },
+                    "county": {
+                        "@type": "@id"
+                    }
+                }
+            ],
+            "id": "https://api.weather.gov/points/47.6733,-122.3426",
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.3426,
+                    47.673299999999998
+                ]
+            },
+            "properties": {
+                "@id": "https://api.weather.gov/points/47.6733,-122.3426",
+                "@type": "wx:Point",
+                "cwa": "SEW",
+                "forecastOffice": "https://api.weather.gov/offices/SEW",
+                "gridId": "SEW",
+                "gridX": 125,
+                "gridY": 71,
+                "forecast": "https://api.weather.gov/gridpoints/SEW/125,71/forecast",
+                "forecastHourly": "https://api.weather.gov/gridpoints/SEW/125,71/forecast/hourly",
+                "forecastGridData": "https://api.weather.gov/gridpoints/SEW/125,71",
+                "observationStations": "https://api.weather.gov/gridpoints/SEW/125,71/stations",
+                "relativeLocation": {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -122.350876,
+                            47.620499000000002
+                        ]
+                    },
+                    "properties": {
+                        "city": "Seattle",
+                        "state": "WA",
+                        "distance": {
+                            "unitCode": "wmoUnit:m",
+                            "value": 5903.8537686001
+                        },
+                        "bearing": {
+                            "unitCode": "wmoUnit:degree_(angle)",
+                            "value": 6
+                        }
+                    }
+                },
+                "forecastZone": "https://api.weather.gov/zones/forecast/WAZ558",
+                "county": "https://api.weather.gov/zones/county/WAC033",
+                "fireWeatherZone": "https://api.weather.gov/zones/fire/WAZ654",
+                "timeZone": "America/Los_Angeles",
+                "radarStation": "KATX"
+            }
+        }
+  recorded_at: Thu, 26 Sep 2024 04:11:07 GMT
+- request:
+    method: get
+    uri: https://api.weather.gov/gridpoints/SEW/125,71/forecast
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - "(<NOAA_API_CONTACT_WEBSITE>, admin@<NOAA_API_CONTACT_WEBSITE>)"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.20.1
+      Content-Type:
+      - application/geo+json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Correlation-Id, X-Request-Id, X-Server-Id
+      X-Request-Id:
+      - bc56cfa2-70dd-4e7c-8545-f12aa7c28715
+      X-Correlation-Id:
+      - '1265987'
+      X-Server-Id:
+      - vm-lnx-nids-apiapp15.ncep.noaa.gov
+      Vary:
+      - Accept,Feature-Flags,Accept-Language
+      - Accept-Encoding
+      Cache-Control:
+      - public, max-age=1542, s-maxage=3600
+      Expires:
+      - Thu, 26 Sep 2024 04:36:49 GMT
+      Date:
+      - Thu, 26 Sep 2024 04:11:07 GMT
+      Content-Length:
+      - '13625'
+      Connection:
+      - keep-alive
+      X-Edge-Request-Id:
+      - 45ffa50c
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains ; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "@context": [
+                "https://geojson.org/geojson-ld/geojson-context.jsonld",
+                {
+                    "@version": "1.1",
+                    "wx": "https://api.weather.gov/ontology#",
+                    "geo": "http://www.opengis.net/ont/geosparql#",
+                    "unit": "http://codes.wmo.int/common/unit/",
+                    "@vocab": "https://api.weather.gov/ontology#"
+                }
+            ],
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -122.3570239,
+                            47.677538400000003
+                        ],
+                        [
+                            -122.3507901,
+                            47.6570149
+                        ],
+                        [
+                            -122.32024,
+                            47.661220900000004
+                        ],
+                        [
+                            -122.3264672,
+                            47.681744700000003
+                        ],
+                        [
+                            -122.3570239,
+                            47.677538400000003
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "units": "us",
+                "forecastGenerator": "BaselineForecastGenerator",
+                "generatedAt": "2024-09-26T03:36:45+00:00",
+                "updateTime": "2024-09-25T22:40:23+00:00",
+                "validTimes": "2024-09-25T16:00:00+00:00/P7DT12H",
+                "elevation": {
+                    "unitCode": "wmoUnit:m",
+                    "value": 60.960000000000001
+                },
+                "periods": [
+                    {
+                        "number": 1,
+                        "name": "Tonight",
+                        "startTime": "2024-09-25T20:00:00-07:00",
+                        "endTime": "2024-09-26T06:00:00-07:00",
+                        "isDaytime": false,
+                        "temperature": 51,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": 50
+                        },
+                        "windSpeed": "6 mph",
+                        "windDirection": "SE",
+                        "icon": "https://api.weather.gov/icons/land/night/tsra_sct,50/bkn?size=medium",
+                        "shortForecast": "Slight Chance Showers And Thunderstorms then Mostly Cloudy",
+                        "detailedForecast": "A chance of rain before 11pm, then a slight chance of showers and thunderstorms between 11pm and midnight. Mostly cloudy, with a low around 51. Southeast wind around 6 mph. Chance of precipitation is 50%. New rainfall amounts less than a tenth of an inch possible."
+                    },
+                    {
+                        "number": 2,
+                        "name": "Thursday",
+                        "startTime": "2024-09-26T06:00:00-07:00",
+                        "endTime": "2024-09-26T18:00:00-07:00",
+                        "isDaytime": true,
+                        "temperature": 66,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": 70
+                        },
+                        "windSpeed": "6 to 10 mph",
+                        "windDirection": "S",
+                        "icon": "https://api.weather.gov/icons/land/day/bkn/rain,70?size=medium",
+                        "shortForecast": "Partly Sunny then Light Rain Likely",
+                        "detailedForecast": "Rain likely after 2pm. Partly sunny, with a high near 66. South wind 6 to 10 mph. Chance of precipitation is 70%. New rainfall amounts less than a tenth of an inch possible."
+                    },
+                    {
+                        "number": 3,
+                        "name": "Thursday Night",
+                        "startTime": "2024-09-26T18:00:00-07:00",
+                        "endTime": "2024-09-27T06:00:00-07:00",
+                        "isDaytime": false,
+                        "temperature": 56,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": 90
+                        },
+                        "windSpeed": "10 to 15 mph",
+                        "windDirection": "SSW",
+                        "icon": "https://api.weather.gov/icons/land/night/rain,90?size=medium",
+                        "shortForecast": "Light Rain",
+                        "detailedForecast": "Rain. Mostly cloudy, with a low around 56. South southwest wind 10 to 15 mph, with gusts as high as 24 mph. Chance of precipitation is 90%. New rainfall amounts less than a tenth of an inch possible."
+                    },
+                    {
+                        "number": 4,
+                        "name": "Friday",
+                        "startTime": "2024-09-27T06:00:00-07:00",
+                        "endTime": "2024-09-27T18:00:00-07:00",
+                        "isDaytime": true,
+                        "temperature": 66,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": 30
+                        },
+                        "windSpeed": "6 to 10 mph",
+                        "windDirection": "W",
+                        "icon": "https://api.weather.gov/icons/land/day/rain,30/sct?size=medium",
+                        "shortForecast": "Chance Light Rain then Mostly Sunny",
+                        "detailedForecast": "A chance of rain before 11am. Mostly sunny, with a high near 66. West wind 6 to 10 mph. Chance of precipitation is 30%. New rainfall amounts less than a tenth of an inch possible."
+                    },
+                    {
+                        "number": 5,
+                        "name": "Friday Night",
+                        "startTime": "2024-09-27T18:00:00-07:00",
+                        "endTime": "2024-09-28T06:00:00-07:00",
+                        "isDaytime": false,
+                        "temperature": 52,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "9 mph",
+                        "windDirection": "N",
+                        "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
+                        "shortForecast": "Partly Cloudy",
+                        "detailedForecast": "Partly cloudy, with a low around 52. North wind around 9 mph."
+                    },
+                    {
+                        "number": 6,
+                        "name": "Saturday",
+                        "startTime": "2024-09-28T06:00:00-07:00",
+                        "endTime": "2024-09-28T18:00:00-07:00",
+                        "isDaytime": true,
+                        "temperature": 62,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "7 to 10 mph",
+                        "windDirection": "N",
+                        "icon": "https://api.weather.gov/icons/land/day/bkn?size=medium",
+                        "shortForecast": "Mostly Cloudy",
+                        "detailedForecast": "Mostly cloudy, with a high near 62."
+                    },
+                    {
+                        "number": 7,
+                        "name": "Saturday Night",
+                        "startTime": "2024-09-28T18:00:00-07:00",
+                        "endTime": "2024-09-29T06:00:00-07:00",
+                        "isDaytime": false,
+                        "temperature": 48,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "1 to 7 mph",
+                        "windDirection": "ESE",
+                        "icon": "https://api.weather.gov/icons/land/night/bkn?size=medium",
+                        "shortForecast": "Mostly Cloudy",
+                        "detailedForecast": "Mostly cloudy, with a low around 48."
+                    },
+                    {
+                        "number": 8,
+                        "name": "Sunday",
+                        "startTime": "2024-09-29T06:00:00-07:00",
+                        "endTime": "2024-09-29T18:00:00-07:00",
+                        "isDaytime": true,
+                        "temperature": 62,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "3 to 7 mph",
+                        "windDirection": "SSE",
+                        "icon": "https://api.weather.gov/icons/land/day/sct?size=medium",
+                        "shortForecast": "Mostly Sunny",
+                        "detailedForecast": "Mostly sunny, with a high near 62."
+                    },
+                    {
+                        "number": 9,
+                        "name": "Sunday Night",
+                        "startTime": "2024-09-29T18:00:00-07:00",
+                        "endTime": "2024-09-30T06:00:00-07:00",
+                        "isDaytime": false,
+                        "temperature": 47,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "7 mph",
+                        "windDirection": "N",
+                        "icon": "https://api.weather.gov/icons/land/night/few?size=medium",
+                        "shortForecast": "Mostly Clear",
+                        "detailedForecast": "Mostly clear, with a low around 47."
+                    },
+                    {
+                        "number": 10,
+                        "name": "Monday",
+                        "startTime": "2024-09-30T06:00:00-07:00",
+                        "endTime": "2024-09-30T18:00:00-07:00",
+                        "isDaytime": true,
+                        "temperature": 65,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "5 to 9 mph",
+                        "windDirection": "N",
+                        "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
+                        "shortForecast": "Sunny",
+                        "detailedForecast": "Sunny, with a high near 65."
+                    },
+                    {
+                        "number": 11,
+                        "name": "Monday Night",
+                        "startTime": "2024-09-30T18:00:00-07:00",
+                        "endTime": "2024-10-01T06:00:00-07:00",
+                        "isDaytime": false,
+                        "temperature": 49,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "3 to 8 mph",
+                        "windDirection": "N",
+                        "icon": "https://api.weather.gov/icons/land/night/sct/rain?size=medium",
+                        "shortForecast": "Partly Cloudy then Slight Chance Light Rain",
+                        "detailedForecast": "A slight chance of rain after 5am. Partly cloudy, with a low around 49."
+                    },
+                    {
+                        "number": 12,
+                        "name": "Tuesday",
+                        "startTime": "2024-10-01T06:00:00-07:00",
+                        "endTime": "2024-10-01T18:00:00-07:00",
+                        "isDaytime": true,
+                        "temperature": 66,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "3 to 7 mph",
+                        "windDirection": "NNW",
+                        "icon": "https://api.weather.gov/icons/land/day/rain?size=medium",
+                        "shortForecast": "Slight Chance Light Rain",
+                        "detailedForecast": "A slight chance of rain. Mostly sunny, with a high near 66."
+                    },
+                    {
+                        "number": 13,
+                        "name": "Tuesday Night",
+                        "startTime": "2024-10-01T18:00:00-07:00",
+                        "endTime": "2024-10-02T06:00:00-07:00",
+                        "isDaytime": false,
+                        "temperature": 50,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "7 mph",
+                        "windDirection": "NNE",
+                        "icon": "https://api.weather.gov/icons/land/night/rain?size=medium",
+                        "shortForecast": "Chance Light Rain",
+                        "detailedForecast": "A chance of rain. Mostly cloudy, with a low around 50."
+                    },
+                    {
+                        "number": 14,
+                        "name": "Wednesday",
+                        "startTime": "2024-10-02T06:00:00-07:00",
+                        "endTime": "2024-10-02T18:00:00-07:00",
+                        "isDaytime": true,
+                        "temperature": 61,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "",
+                        "probabilityOfPrecipitation": {
+                            "unitCode": "wmoUnit:percent",
+                            "value": null
+                        },
+                        "windSpeed": "5 to 8 mph",
+                        "windDirection": "NNE",
+                        "icon": "https://api.weather.gov/icons/land/day/rain?size=medium",
+                        "shortForecast": "Slight Chance Light Rain",
+                        "detailedForecast": "A slight chance of rain. Mostly sunny, with a high near 61."
+                    }
+                ]
+            }
+        }
+  recorded_at: Thu, 26 Sep 2024 04:11:07 GMT
+recorded_with: VCR 6.3.1

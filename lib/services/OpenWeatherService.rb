@@ -46,7 +46,7 @@ module Services
 
     def weather_from_json(json)
       hash = Services::Utils.parse_json(json)
-      weather = WeatherDetail.new
+      weather = WeatherData.new
       weather.temp = hash[:main][:temp]
       weather.feels_like = hash[:main][:feels_like]
       weather.temp_min = hash[:main][:temp_min]

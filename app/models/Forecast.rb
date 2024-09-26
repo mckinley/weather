@@ -1,3 +1,3 @@
 class Forecast
-  attr_accessor :name, :weather_details, :from_cache
+  attr_accessor :weather_data, :from_cache
 end

@@ -15,7 +15,7 @@ RSpec.describe Services::OpenWeatherService, vcr: { cassette_name: "open_weather
       expect(location.name).to eq "Seattle"
       expect(location.country).to eq "US"
 
-      expect(current_weather).to be_a(WeatherDetail)
+      expect(current_weather).to be_a(WeatherData)
       expect(current_weather.temp).to eq 292.08
       expect(current_weather.feels_like).to eq 292.12
       expect(current_weather.temp_min).to eq 290.61

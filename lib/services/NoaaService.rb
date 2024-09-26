@@ -33,8 +33,8 @@ module Services
     def forecast_from_json(json)
       hash = Utils.parse_json(json)
       forecast = Forecast.new
-      forecast.weather_details = hash[:properties][:periods].map do |period|
-        weather = WeatherDetail.new
+      forecast.weather_data = hash[:properties][:periods].map do |period|
+        weather = WeatherData.new
         weather.name = period[:name]
         weather.start_time = period[:startTime]
         weather.end_time = period[:endTime]

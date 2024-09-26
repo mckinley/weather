@@ -2,7 +2,7 @@
 
 <% if @forecast %>
 <pre>
-<%= JSON.pretty_generate(@forecast.weather_details.map(&:description)) %>
+<%= JSON.pretty_generate(@forecast.weather_data.map(&:description)) %>
 </pre>
 <% end %>
 

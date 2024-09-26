@@ -8,18 +8,22 @@ module Services
       @conn = Faraday.new(url: "https://api.openweathermap.org", params: { appid: OPEN_WEATHER_API_KEY })
     end
 
-    def get_location_weather_for_zip(zip)
-      # Rails.cache.exist? would introduce a race condition, so we are using the from_cache var.
+    def get_current_weather_for_zip(zip)
       from_cache = true
-      location = Rails.cache.fetch("OpenWeatherService#get_location_weather_for_zip:#{zip}", expires_in: 30.minutes) do
+      current_weather = Rails.cache.fetch("OpenWeatherService#get_current_weather_for_zip:#{zip}", expires_in: 30.minutes) do
         from_cache = false
         location = get_location_for_zip(zip)
         weather = get_weather_for_coordinates(location.lat, location.lon)
-        location.current_weather = weather
-        location
+        weather.location = location
+        weather
       end
-      location.from_cache = from_cache
-      location
+      current_weather.from_cache = from_cache
+      current_weather
+    end
+
+    def get_location_for_zip(zip)
+      response = @conn.get("geo/1.0/zip?zip=#{zip}")
+      location_from_json(response)
     end
 
     private
@@ -27,11 +31,6 @@ module Services
     def get_weather_for_coordinates(lat, lon)
       response = @conn.get("data/2.5/weather?lat=#{lat}&lon=#{lon}")
       weather_from_json(response)
-    end
-
-    def get_location_for_zip(zip)
-      response = @conn.get("geo/1.0/zip?zip=#{zip}")
-      location_from_json(response)
     end
 
     def location_from_json(json)

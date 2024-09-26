@@ -1,0 +1,19 @@
+<h1 class="text-2xl font-semibold leading-6 text-gray-900">Current Weather</h1>
+
+<% if @current_weather %>
+  <h2>Current weather for <%= @current_weather.location.name %></h2>
+  <p>Summary: <%= @current_weather.summary %></p>
+  <p>Description: <%= @current_weather.description %></p>
+  <ul>
+    <li>Temperature: <%= @current_weather.temp %></li>
+    <li>Feels like: <%= @current_weather.feels_like %></li>
+    <li>High: <%= @current_weather.temp_max %></li>
+    <li>Low: <%= @current_weather.temp_min %></li>
+    <li>Pressure: <%= @current_weather.pressure %></li>
+    <li>Humidity: <%= @current_weather.humidity %></li>
+    <li>Wind speed: <%= @current_weather.wind_speed %></li>
+    <li>From cache: <%= @current_weather.from_cache %></li>
+  </ul>
+<% end %>
+
+<%= render "application/address_form" %>

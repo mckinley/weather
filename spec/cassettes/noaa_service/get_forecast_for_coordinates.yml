@@ -519,4 +519,125 @@ http_interactions:
             }
         }
   recorded_at: Wed, 25 Sep 2024 20:47:35 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/geo/1.0/zip?appid=<OPEN_WEATHER_API_KEY>&zip=98103
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Thu, 26 Sep 2024 00:14:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '77'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/geo/1.0/zip?zip=98103"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"zip":"98103","name":"Seattle","lat":47.6733,"lon":-122.3426,"country":"US"}'
+  recorded_at: Thu, 26 Sep 2024 00:14:25 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/2.5/weather?appid=<OPEN_WEATHER_API_KEY>&lat=47.6733&lon=-122.3426
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Thu, 26 Sep 2024 00:14:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '544'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/weather?lat=47.67&lon=-122.34"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"coord":{"lon":-122.3426,"lat":47.6733},"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"base":"stations","main":{"temp":289.09,"feels_like":289.06,"temp_min":288.03,"temp_max":290.2,"pressure":1006,"humidity":89,"sea_level":1006,"grnd_level":997},"visibility":10000,"wind":{"speed":3.13,"deg":206,"gust":4.47},"rain":{"1h":1.75},"clouds":{"all":100},"dt":1727309507,"sys":{"type":2,"id":2084372,"country":"US","sunrise":1727272856,"sunset":1727316041},"timezone":-25200,"id":5809844,"name":"Seattle","cod":200}'
+  recorded_at: Thu, 26 Sep 2024 00:14:25 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/geo/1.0/zip?appid=<OPEN_WEATHER_API_KEY>&zip=00000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.12.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Thu, 26 Sep 2024 00:14:26 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '35'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/geo/1.0/zip?zip=00000"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"cod":"404","message":"not found"}'
+  recorded_at: Thu, 26 Sep 2024 00:14:26 GMT
 recorded_with: VCR 6.3.1

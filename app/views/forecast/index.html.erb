@@ -1,0 +1,9 @@
+<h1 class="text-2xl font-semibold leading-6 text-gray-900">Forecast</h1>
+
+<% if @forecast %>
+<pre>
+<%= JSON.pretty_generate(@forecast.weather_details.map(&:description)) %>
+</pre>
+<% end %>
+
+<%= render "application/address_form" %>

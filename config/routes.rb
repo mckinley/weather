@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-  root "location#index", as: :location
+  root "current_weather#index", as: :current_weather
+  get "forecast", to: "forecast#index", as: :forecast
 end

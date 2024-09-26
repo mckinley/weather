@@ -95,3 +95,7 @@ Caching is critical to the performance of the application. The application curre
 ## Product
 There were many assumptions made durring the development of this application. Ideally there would be opportunity to have several conversations with Product to clarify requirements.
 
+## Review
+To view all changes made after the initial generation of the Rails app (`rails new`), this github comparison can be used:
+
+https://github.com/mckinley/weather/compare/8da1c07...main

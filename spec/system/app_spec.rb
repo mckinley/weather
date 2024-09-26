@@ -20,5 +20,9 @@ RSpec.describe "App", type: :system, vcr: { cassette_name: "hub", allow_playback
 
     expect(page.find("h1")).to have_text("Current Weather")
     expect(page).to have_text("Seattle")
+    click_link "Home"
+
+    expect(page.find("h1")).to have_text("Current Weather")
+    expect(page).to_not have_text("Seattle")
   end
 end

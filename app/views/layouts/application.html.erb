@@ -19,7 +19,11 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex flex-col">
+    <main class="container mx-auto mt-28 px-5 flex flex-col space-y-4">
+      <div class="flex justify-center space-x-4">
+        <%= link_to "Current Weather", current_weather_path(request.query_parameters), class: "text-blue-500 hover:text-blue-700" %>
+        <%= link_to "Forecast", forecast_path(request.query_parameters), class: "text-blue-500 hover:text-blue-700" %>
+      </div>
       <%= yield %>
     </main>
   </body>

@@ -2,6 +2,13 @@ RSpec.shared_examples "address requests" do
   let(:valid_zip) { "98103" }
   let(:error_substring) { "prevented the retrieval of weather data" }
 
+  describe "GET /" do
+    it "renders without errors" do
+      get "/"
+      expect(response.body).to_not include("errors")
+    end
+  end
+
   describe "GET /?zip=98103" do
     it "renders city name" do
       get "/", params: { zip: valid_zip }

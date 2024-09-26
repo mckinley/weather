@@ -11,9 +11,11 @@ Data is fetched from the OpenWeatherMap API and the NOAA API.
 
 ### Generate API key with OpenWeatherMap
 You will need to sign up for an account but you will not need to provide any payment information.
+
 https://home.openweathermap.org/users/sign_up
 
 Once you have an account, you can generate an API key.
+
 https://home.openweathermap.org/api_keys
 
 ### Clone this repository and navigate to the project directory
@@ -40,7 +42,9 @@ bundle i
 rails s
 ```
 
-You can now visit the application at http://localhost:3000
+You can now visit the application at:
+
+http://localhost:3000
 
 ### Testing
 To run tests as you develop, you can run the following command:
@@ -61,7 +65,9 @@ rails test:ci
 ```
 
 # Deployment
-The app is deployed here: https://elaborate-florina-mckinley-aviation-f369229d.koyeb.app/
+The app is deployed here:
+
+https://elaborate-florina-mckinley-aviation-f369229d.koyeb.app/
 
 # Architecture Considerations
 ## RSpec for testing
@@ -79,6 +85,10 @@ https://github.com/mckinley/weather/actions/workflows/ci.yml
 ## Services
 Use the Services::Hub class for all service requirements.
 It handles caching and is aware of the various APIs that can be used to fetch data.
+Although it is possible to use other Services directly, it is recommended that all clients use the Hub class instead.
+Service methods are organized by the API they use.
+Hub methods are organized by concerns that clients may have.
+This separation hides API specific details from clients.
 
 ## Models
 At some point, the application may need to store data in a database.
@@ -122,5 +132,5 @@ https://github.com/mckinley/weather/compare/8da1c07...main
 Clicking on "Files changed" will reveal all changes made to the application since it was generated.
 
 ## Screenshots
-![Current Weather](docs/Screenshot 2024-09-26 at 2.01.57 PM.png)
-![Forecast](docs/Screenshot 2024-09-26 at 2.02.33 PM.png)
+![Current Weather](docs/Screenshot%202024-09-26%20at%202.01.57 PM.png)
+![Forecast](docs/Screenshot%202024-09-26%20at%202.02.33 PM.png)

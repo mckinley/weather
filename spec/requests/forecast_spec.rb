@@ -9,4 +9,13 @@ RSpec.describe "Forecasts", type: :request, vcr: { cassette_name: "hub" } do
       expect(response).to be_successful
     end
   end
+
+  describe "GET /?zip=98103" do
+    it "renders current weather" do
+      get "/?zip=98103"
+      expect(response.body).to include("Seattle")
+      expect(response.body).to include("Clear")
+      expect(response.body).to include("clear sky")
+    end
+  end
 end

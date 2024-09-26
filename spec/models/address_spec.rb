@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Address, type: :model do
   let(:valid_zip) { "98103" }
+
   context "when valid" do
     it "has no errors" do
       address = Address.new(zip: valid_zip)

@@ -74,7 +74,7 @@ rails test:ci
 ```
 
 # Deployment
-The app is deployed here:
+The application is deployed here:
 
 https://elaborate-florina-mckinley-aviation-f369229d.koyeb.app/
 
@@ -134,7 +134,7 @@ Ideally there would be opportunity to have several conversations with Product to
 The specifications provided are located [here](docs/Apple%20-%20Ruby%20Coding%20Assessment.pages).
 
 ## Review
-To view all changes made after the initial generation of the Rails app (`rails new`), this github comparison can be used:
+To view all changes made after the initial generation of the Rails application (`rails new`), this github comparison can be used:
 
 https://github.com/mckinley/weather/compare/8da1c07...main
 

@@ -141,5 +141,5 @@ https://github.com/mckinley/weather/compare/8da1c07...main
 Clicking on "Files changed" will reveal all changes made to the application since it was generated.
 
 ## Screenshots
-![Current Weather](docs/Screenshot%202024-09-26%20at%202.01.57 PM.png)
-![Forecast](docs/Screenshot%202024-09-26%20at%202.02.33 PM.png)
+![Current Weather](docs/Screenshot%202024-09-26%20at%5.05.24 PM.png)
+![Forecast](docs/Screenshot%202024-09-26%20at%5.05.11 PM.png)

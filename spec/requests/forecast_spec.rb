@@ -14,8 +14,8 @@ RSpec.describe "Forecasts", type: :request, vcr: { cassette_name: "hub" } do
     it "renders current weather" do
       get "/?zip=98103"
       expect(response.body).to include("Seattle")
-      expect(response.body).to include("Clear")
-      expect(response.body).to include("clear sky")
+      expect(response.body).to include("Clouds")
+      expect(response.body).to include("overcast clouds")
     end
   end
 end

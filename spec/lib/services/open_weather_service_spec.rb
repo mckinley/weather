@@ -25,15 +25,15 @@ RSpec.describe Services::OpenWeatherService, vcr: { cassette_name: "hub" } do
     it "returns the current_weather for coordinates" do
       current_weather = Services::OpenWeatherService.new.get_current_weather_for_coordinates(47.6733, -122.3426)
       expect(current_weather).to be_a(WeatherData)
-      expect(current_weather.temp).to eq 292.08
-      expect(current_weather.feels_like).to eq 292.12
-      expect(current_weather.temp_min).to eq 290.61
-      expect(current_weather.temp_max).to eq 293.87
-      expect(current_weather.pressure).to eq 1005
-      expect(current_weather.humidity).to eq 80
-      expect(current_weather.wind_speed).to eq 0.89
-      expect(current_weather.summary).to eq "Clear"
-      expect(current_weather.description).to eq "clear sky"
+      expect(current_weather.temp).to eq 65.93
+      expect(current_weather.feels_like).to eq 65.08
+      expect(current_weather.temp_min).to eq 63.16
+      expect(current_weather.temp_max).to eq 68.49
+      expect(current_weather.pressure).to eq 1013
+      expect(current_weather.humidity).to eq 61
+      expect(current_weather.wind_speed).to eq 5.99
+      expect(current_weather.summary).to eq "Clouds"
+      expect(current_weather.description).to eq "overcast clouds"
     end
 
     context "when coordinates are not valid" do

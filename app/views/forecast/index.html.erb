@@ -11,7 +11,7 @@
       <p>Summary: <%= weather_data.summary %></p>
       <p>Description: <%= weather_data.description %></p>
       <ul>
-        <li>Temperature: <%= weather_data.temp %></li>
+        <li>Temperature: <%= format_temperature(weather_data.temp) %></li>
         <li>Wind speed: <%= weather_data.wind_speed %></li>
         <li>Wind direction: <%= weather_data.wind_direction %></li>
       </ul>

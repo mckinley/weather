@@ -8,10 +8,10 @@
   <p>Description: <%= @current_weather.description %></p>
   <p>From cache: <%= @current_weather.from_cache %></p>
   <ul>
-    <li>Temperature: <%= @current_weather.temp %></li>
-    <li>Feels like: <%= @current_weather.feels_like %></li>
-    <li>High: <%= @current_weather.temp_max %></li>
-    <li>Low: <%= @current_weather.temp_min %></li>
+    <li>Temperature: <%= format_temperature(@current_weather.temp) %></li>
+    <li>Feels like: <%= format_temperature(@current_weather.feels_like) %></li>
+    <li>High: <%= format_temperature(@current_weather.temp_max) %></li>
+    <li>Low: <%= format_temperature(@current_weather.temp_min) %></li>
     <li>Pressure: <%= @current_weather.pressure %></li>
     <li>Humidity: <%= @current_weather.humidity %></li>
     <li>Wind speed: <%= @current_weather.wind_speed %></li>

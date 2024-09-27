@@ -14,7 +14,7 @@ module Services
     end
 
     def get_current_weather_for_coordinates(lat, lon)
-      response = @conn.get("data/2.5/weather?lat=#{lat}&lon=#{lon}")
+      response = @conn.get("data/2.5/weather?lat=#{lat}&lon=#{lon}&units=imperial")
       current_weather_from_json(response)
     end
 
